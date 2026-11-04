@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Mountain,
   Menu,
@@ -10,7 +11,7 @@ import {
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Destinations", href: "/destinations" },
+  { name: "Destinations", href: "/distinations" },
   { name: "Culture", href: "/culture" },
   { name: "Guides", href: "/guides" },
   { name: "Hotels", href: "/hotels" },
@@ -25,7 +26,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-12 flex items-center justify-between">
 
         {/* LOGO */}
-        <a href="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <div className="w-11 h-11 rounded-xl bg-[#285B48] flex items-center justify-center group-hover:rotate-6 transition-transform">
             <Mountain className="text-white" size={25} />
           </div>
@@ -38,20 +39,20 @@ export default function Navbar() {
               DISCOVER THE ATLAS
             </p>
           </div>
-        </a>
+        </Link>
 
         {/* DESKTOP NAVIGATION */}
         <div className="hidden lg:flex items-center gap-8">
           {links.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="relative text-[13px] font-medium text-[#55564F] hover:text-[#285B48] transition-colors
               after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px]
               after:bg-[#B58B59] hover:after:w-full after:transition-all"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -81,14 +82,14 @@ export default function Navbar() {
       {isOpen && (
         <div className="lg:hidden bg-[#FAF9F6] border-t border-[#E9E4DA] px-6 py-6 space-y-5">
           {links.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               onClick={() => setIsOpen(false)}
               className="block text-sm font-medium text-[#55564F] hover:text-[#285B48]"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
 
           <div className="flex gap-3 pt-4 border-t border-[#E9E4DA]">

@@ -1,13 +1,12 @@
-import { Routes, Route } from 'react-router'
-import './index.css'
+import { Routes, Route } from "react-router-dom";
+import "./index.css";
 
-import Home from './components/lyouts/home'
-import Header from './components/lyouts/Navbar'
-import Footer from './components/lyouts/Footer'
+import Home from "./components/lyouts/home";
+import Header from "./components/lyouts/Navbar";
+import Footer from "./components/lyouts/Footer";
 
-// Import other pages
-// import Destinations from './components/pages/Destinations'
-// import Culture from './components/pages/Culture'
+import Destinations from "./components/DistinationPage/Destinations";
+import DestinationDetail from "./components/DistinationPage/DestinationDetail";
 
 function App() {
   return (
@@ -15,14 +14,14 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path='/' element={<Home />} />
-        {/* <Route path='/destinations' element={<Destinations />} /> */}
-        {/* <Route path='/culture' element={<Culture />} /> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/distinations" element={<Destinations />} />
+        <Route path="/distination/:id" element={<DestinationDetail />} />
       </Routes>
 
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
