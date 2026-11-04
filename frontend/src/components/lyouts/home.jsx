@@ -6,13 +6,11 @@ import CraftsSection from './CraftsSection'
 export default function Home() {
   return (
     <>
-    {/* Navbar  */}
-      <Navbar />
       {/* main */}
       <Hero />
       <CraftsSection/>
-      {/* footer */}
-    <Footer />
+      
+      {/* main */}
     </>
   );
 }
