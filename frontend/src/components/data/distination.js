@@ -5,7 +5,6 @@ const destinations = [
     id: 1,
     slug: "cascades-ouzoud",
     name: "Cascades d'Ouzoud",
-    region: "Tanant · Azilal",
     category: "Nature & Aventure",
     shortDescription:
       "Découvrez l'une des plus belles cascades du Maroc, entourée de montagnes et d'oliviers.",
@@ -57,7 +56,6 @@ const destinations = [
     id: 2,
     slug: "bin-el-ouidane",
     name: "Bin El Ouidane",
-    region: "Azilal · Béni Mellal-Khénifra",
     category: "Lac & Montagne",
     shortDescription:
       "Un magnifique lac entouré de montagnes, idéal pour admirer les paysages et profiter du calme.",
@@ -104,7 +102,141 @@ const destinations = [
     id: 3,
     slug: "ait-bouguemez",
     name: "Vallée des Aït Bouguemez",
-    region: "Haut Atlas · Azilal",
+    category: "Culture & Montagne",
+    shortDescription:
+      "Une vallée authentique connue pour ses villages, ses montagnes et son patrimoine amazigh.",
+    description:
+      "La vallée des Aït Bouguemez offre une immersion dans la vie traditionnelle du Haut Atlas. Ses villages, ses paysages et son patrimoine en font une destination culturelle remarquable.",
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200",
+    gallery: [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200",
+    ],
+    facts: [
+      { label: "Type", value: "Vallée montagneuse" },
+      { label: "Ambiance", value: "Culture & authenticité" },
+      { label: "À découvrir", value: "Villages et patrimoine" },
+    ],
+    culture: {
+      title: "L'identité amazighe",
+      description:
+        "La vallée est réputée pour ses traditions amazighes, son architecture en terre, ses fêtes et son artisanat.",
+      traditions: ["Architecture traditionnelle", "Tissage amazigh", "Fêtes locales"],
+    },
+    products: [
+      {
+        name: "Tapis traditionnel",
+        description: "Des tapis tissés avec des motifs inspirés du patrimoine local.",
+        image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600",
+      },
+      {
+        name: "Miel de montagne",
+        description: "Un produit du terroir des montagnes du Haut Atlas.",
+        image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=600",
+      },
+    ],
+    music: {
+      title: "Ahwach",
+      description:
+        "L'Ahwach est une expression artistique collective qui associe chants, rythmes et danses traditionnelles.",
+      genre: "Ahwach amazigh",
+    },
+  },
+  {
+    id: 3,
+    slug: "ait-bouguemez",
+    name: "Vallée des Aït Bouguemez",
+    category: "Culture & Montagne",
+    shortDescription:
+      "Une vallée authentique connue pour ses villages, ses montagnes et son patrimoine amazigh.",
+    description:
+      "La vallée des Aït Bouguemez offre une immersion dans la vie traditionnelle du Haut Atlas. Ses villages, ses paysages et son patrimoine en font une destination culturelle remarquable.",
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200",
+    gallery: [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200",
+    ],
+    facts: [
+      { label: "Type", value: "Vallée montagneuse" },
+      { label: "Ambiance", value: "Culture & authenticité" },
+      { label: "À découvrir", value: "Villages et patrimoine" },
+    ],
+    culture: {
+      title: "L'identité amazighe",
+      description:
+        "La vallée est réputée pour ses traditions amazighes, son architecture en terre, ses fêtes et son artisanat.",
+      traditions: ["Architecture traditionnelle", "Tissage amazigh", "Fêtes locales"],
+    },
+    products: [
+      {
+        name: "Tapis traditionnel",
+        description: "Des tapis tissés avec des motifs inspirés du patrimoine local.",
+        image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600",
+      },
+      {
+        name: "Miel de montagne",
+        description: "Un produit du terroir des montagnes du Haut Atlas.",
+        image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=600",
+      },
+    ],
+    music: {
+      title: "Ahwach",
+      description:
+        "L'Ahwach est une expression artistique collective qui associe chants, rythmes et danses traditionnelles.",
+      genre: "Ahwach amazigh",
+    },
+  },
+  {
+    id: 3,
+    slug: "ait-bouguemez",
+    name: "Vallée des Aït Bouguemez",
+    category: "Culture & Montagne",
+    shortDescription:
+      "Une vallée authentique connue pour ses villages, ses montagnes et son patrimoine amazigh.",
+    description:
+      "La vallée des Aït Bouguemez offre une immersion dans la vie traditionnelle du Haut Atlas. Ses villages, ses paysages et son patrimoine en font une destination culturelle remarquable.",
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200",
+    gallery: [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200",
+    ],
+    facts: [
+      { label: "Type", value: "Vallée montagneuse" },
+      { label: "Ambiance", value: "Culture & authenticité" },
+      { label: "À découvrir", value: "Villages et patrimoine" },
+    ],
+    culture: {
+      title: "L'identité amazighe",
+      description:
+        "La vallée est réputée pour ses traditions amazighes, son architecture en terre, ses fêtes et son artisanat.",
+      traditions: ["Architecture traditionnelle", "Tissage amazigh", "Fêtes locales"],
+    },
+    products: [
+      {
+        name: "Tapis traditionnel",
+        description: "Des tapis tissés avec des motifs inspirés du patrimoine local.",
+        image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=600",
+      },
+      {
+        name: "Miel de montagne",
+        description: "Un produit du terroir des montagnes du Haut Atlas.",
+        image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=600",
+      },
+    ],
+    music: {
+      title: "Ahwach",
+      description:
+        "L'Ahwach est une expression artistique collective qui associe chants, rythmes et danses traditionnelles.",
+      genre: "Ahwach amazigh",
+    },
+  },
+  {
+    id: 3,
+    slug: "ait-bouguemez",
+    name: "Vallée des Aït Bouguemez",
     category: "Culture & Montagne",
     shortDescription:
       "Une vallée authentique connue pour ses villages, ses montagnes et son patrimoine amazigh.",

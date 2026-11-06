@@ -1,16 +1,13 @@
-import Navbar from "./Navbar";
-import Hero from "./HeroSection";
-import Footer from './Footer'
-import CraftsSection from './CraftsSection'
-
+import HeroSection from '../lyouts/HeroSection'
 export default function Home() {
   return (
-    <>
-      {/* main */}
-      <Hero />
-      <CraftsSection/>
-      
-      {/* main */}
-    </>
+   <main>
+      <HeroSection />
+
+      {/* Other sections */}
+      <section id="experiences">
+        {/* Experiences Section */}
+      </section>
+    </main>
   );
 }

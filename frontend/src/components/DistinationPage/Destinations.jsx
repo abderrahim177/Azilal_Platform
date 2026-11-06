@@ -17,7 +17,7 @@ export default function Destinations() {
   return (
     <main className="min-h-screen bg-[#FAF9F6]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#1c2922] px-6 py-24 text-center text-white">
+      {/* <section className="relative overflow-hidden bg-[#1c2922] px-6 py-24 text-center text-white">
         <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#285B48]/40 blur-3xl" />
         <div className="absolute -bottom-28 -right-20 h-72 w-72 rounded-full bg-[#8CA68D]/20 blur-3xl" />
 
@@ -37,7 +37,7 @@ export default function Destinations() {
             des destinations de la région d'Azilal.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Destinations */}
       <section className="mx-auto max-w-7xl px-6 py-20">
