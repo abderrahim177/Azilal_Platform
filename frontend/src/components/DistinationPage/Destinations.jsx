@@ -15,7 +15,7 @@ export default function Destinations() {
   );
 
   return (
-    <main className="min-h-screen bg-[#FAF9F6]">
+    <main className="relative isolate overflow-hidden min-h-screen bg-[#FAF9F6]">
       {/* Hero */}
       {/* <section className="relative overflow-hidden bg-[#1c2922] px-6 py-24 text-center text-white">
         <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#285B48]/40 blur-3xl" />
@@ -38,14 +38,17 @@ export default function Destinations() {
           </p>
         </div>
       </section> */}
-
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('/images/artisan_Amazigh_Cpier.jpg')",
+        }}
+      />
       {/* Destinations */}
-      <section className="mx-auto max-w-7xl px-6 py-20">
+      <section className="mx-auto max-w-7xl px-6 py-20 mt-3">
         <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#285B48]">
-              Nos destinations
-            </span>
             <h2 className="mt-3 text-3xl font-bold text-[#1c2922] md:text-4xl">
               Explorez chaque région
             </h2>
