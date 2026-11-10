@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -6,22 +7,22 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('culturs', function (Blueprint $table) {
+        Schema::create('destination_images', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('destination_id')
+                ->constrained()
+                ->cascadeOnDelete();
+
+            $table->string('image_url');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('culturs');
+        Schema::dropIfExists('destination_images');
     }
 };

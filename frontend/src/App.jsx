@@ -5,12 +5,13 @@ import MainLayout from "./components/lyouts/MainLayout";
 import Home from "./components/lyouts/home";
 import Destinations from "./components/DistinationPage/Destinations";
 import DestinationDetail from "./components/DistinationPage/DestinationDetail";
-
 // Import these components when you create them
 // import Guides from "./components/Guides/Guides";
 // import Hotels from "./components/Hotels/Hotels";
-// import Login from "./components/Auth/Login";
-// import Register from "./components/Auth/Register";
+import Login from "./components/pages/Auth/login";
+import Register from "./components/pages/Auth/register";
+import GuideForm from "./components/Forms/GuideForm";
+import HotelManagerForm from "./components/Forms/HotelManagerForm";
 
 function App() {
   return (
@@ -31,7 +32,10 @@ function App() {
         {/* <Route path="/hotels" element={<Hotels />} /> */}
 
       </Route>
-
+      <Route path="/login" element={<Login />} />
+    <Route path="/register" element={<Register />} />
+     <Route path="/guide-setup" element={<GuideForm />} />
+      <Route path="/hotel-setup" element={<HotelManagerForm />} />
     </Routes>
   );
 }

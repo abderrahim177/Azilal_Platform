@@ -6,7 +6,6 @@ export default function Home() {
    <main>
       <HeroSection />
       <DestinationGallery />
-      <Footer/>
     </main>
   );
 }

@@ -12,11 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('guides', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        $table->id();
+        $table->foreignId('user_id')->unique()->constrained('users')->cascadeOnDelete();
+        $table->string('phone')->nullable();
+        $table->text('description')->nullable();
+        $table->string('image')->nullable();
+        $table->timestamps();
+    });
     }
-
     /**
      * Reverse the migrations.
      */
