@@ -4,13 +4,35 @@ import { Link } from "react-router-dom";
 import { Eye, EyeOff, LockKeyhole, Mail } from "lucide-react";
 import AuthLayout from "../../Auth/AuthLayout";
 import GoogleButton from "../../Auth/GoogleButton";
-
+import axios from 'axios'
 export default function Login() {
+  const [error , setError] = useState(null);
+  const [loading , setLoading] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
-
-  const handleSubmit = (e) => {
+  const [data , setData] = useState({
+    email : "",
+    password : ""
+  })
+  const handleChange = (e) => {
+  const { name, value } = e.target;
+  setData((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+};
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    // هنا غادي نربطو Laravel API من بعد
+      try {
+        const response = await axios.post('http://127.0.0.1:8000/api/register' , data , {
+          headers : {
+            Accept : 'application/json',
+            'Content-Type' : 'application/json'
+          }
+        })
+      } catch (error) {
+        console.log(error);
+        
+      }
   };
 
   return (
@@ -35,7 +57,9 @@ export default function Login() {
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" size={18} />
             <input
+              name="email"
               type="email"
+              onChange={handleChange}
               placeholder="name@example.com"
               required
               className="w-full h-11 pl-10 pr-4 rounded-lg border border-stone-200 bg-white text-sm outline-none transition focus:border-[#26372d] focus:ring-2 focus:ring-[#26372d]/10"
@@ -56,7 +80,9 @@ export default function Login() {
           <div className="relative">
             <LockKeyhole className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" size={18} />
             <input
+              name="password"
               type={showPassword ? "text" : "password"}
+              onChange={handleChange}
               placeholder="Enter your password"
               required
               className="w-full h-11 pl-10 pr-11 rounded-lg border border-stone-200 bg-white text-sm outline-none transition focus:border-[#26372d] focus:ring-2 focus:ring-[#26372d]/10"

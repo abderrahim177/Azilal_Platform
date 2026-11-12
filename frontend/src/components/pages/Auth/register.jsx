@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Eye,
   EyeOff,
@@ -8,45 +8,100 @@ import {
   Mail,
   UserRound,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import AuthLayout from "../../Auth/AuthLayout";
 import GoogleButton from "../../Auth/GoogleButton";
 import RoleSelector from "../../Auth/RoleSelector";
+import axios from "axios";
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [role, setRole] = useState("");
 
-  // Default role
-  const [role, setRole] = useState("visitor");
-   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setError("");
+
+    // Check password
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+      setError("Passwords do not match!");
       return;
     }
 
-    const formData = {
-      name,
-      email,
-      password,
-      role,
-    };
+    if (!role) {
+      setError("Please select an account role.");
+      return;
+    }
 
-    console.log("Register data:", formData);
-    if (role === "guide") {
-    navigate("/guide-setup");
-  } else if (role === "hotel_manager") {
-    navigate("/hotel-setup");
-  } else {
-    navigate("/");
-  }
+    try {
+      setLoading(true);
+
+      const formData = {
+        name,
+        email,
+        password,
+        role,
+      };
+
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/register",
+        formData,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const { token, user } = response.data;
+
+      // Save authentication data
+      localStorage.setItem("Access_token", token);
+      localStorage.setItem("user", JSON.stringify(user));
+
+      // Redirect according to role
+      if (role === "guide") {
+        navigate("/guide-setup");
+      } else if (role === "hotel_manager") {
+        navigate("/hotel-setup");
+      } else {
+        navigate("/");
+      }
+
+    } catch (err) {
+      console.error("Registration error:", err);
+
+      if (err.response) {
+        const errors = err.response.data.errors;
+
+        if (errors) {
+          setError(
+            Object.values(errors).flat().join(" ")
+          );
+        } else {
+          setError(
+            err.response.data.message || "Registration failed."
+          );
+        }
+      } else if (err.request) {
+        setError("Server not responding. Check your Laravel backend.");
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -63,6 +118,12 @@ export default function Register() {
         </span>
         <div className="h-px bg-stone-200 flex-1" />
       </div>
+
+      {error && (
+        <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg p-3 mb-3">
+          {error}
+        </p>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-3">
 
@@ -130,7 +191,6 @@ export default function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              minLength={8}
               className="w-full h-10 pl-10 pr-11 rounded-lg border border-stone-200 outline-none text-sm focus:border-[#26372d] focus:ring-2 focus:ring-[#26372d]/10"
             />
 
@@ -156,7 +216,6 @@ export default function Register() {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
-            minLength={8}
             className="w-full h-10 px-4 rounded-lg border border-stone-200 outline-none text-sm focus:border-[#26372d] focus:ring-2 focus:ring-[#26372d]/10"
           />
         </div>
@@ -194,10 +253,12 @@ export default function Register() {
         {/* Submit */}
         <button
           type="submit"
-          className="w-full h-10 rounded-lg bg-[#26372d] text-white text-sm font-semibold hover:bg-[#354b3c] transition-all shadow-sm"
+          disabled={loading}
+          className="w-full h-10 rounded-lg bg-[#26372d] text-white text-sm font-semibold hover:bg-[#354b3c] transition-all shadow-sm disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          Create account
+          {loading ? "Creating account..." : "Create account"}
         </button>
+
       </form>
 
       <p className="text-center text-sm text-stone-500 mt-4">

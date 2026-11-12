@@ -23,4 +23,9 @@ class Guide extends Model
     {
         return $this->belongsToMany(Destination::class);
     }
+    
+    public function Language () : BelongsToMany 
+    {
+        return $this->belongsToMany(Language::class);
+    }
 }
