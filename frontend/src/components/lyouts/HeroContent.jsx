@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-
+import { NavLink, Link } from "react-router-dom";
 export default function HeroContent() {
   return (
     <div className="absolute z-20 left-7 md:left-14 bottom-24 md:bottom-36 max-w-lg">
@@ -23,7 +23,8 @@ export default function HeroContent() {
         and unforgettable natural landscapes.
       </p>
 
-      <a
+      <Link
+      to={'/distinations'}
         className="inline-flex items-center text-gray-800 gap-3 mt-7
         bg-amber-300 text-black rounded-full px-6 py-3
         text-md font-bold hover:bg-amber-500
@@ -31,7 +32,7 @@ export default function HeroContent() {
       >
         Explore Azilal
         <ArrowRight size={15} />
-      </a>
+      </Link>
 
     </div>
   );

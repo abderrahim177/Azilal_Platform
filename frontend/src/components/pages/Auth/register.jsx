@@ -71,9 +71,9 @@ export default function Register() {
 
       // Redirect according to role
       if (role === "guide") {
-        navigate("/guide-setup");
+        navigate("/guide/dashboard");
       } else if (role === "hotel_manager") {
-        navigate("/hotel-setup");
+        navigate("/hotel-manager/dashboard");
       } else {
         navigate("/");
       }

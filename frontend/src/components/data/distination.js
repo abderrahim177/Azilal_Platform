@@ -11,7 +11,7 @@ const destinations = [
     description:
       "Les cascades d'Ouzoud sont un lieu naturel exceptionnel. Avec leurs eaux impressionnantes, leurs paysages verdoyants et leurs petits sentiers, elles offrent une expérience unique au cœur de la région d'Azilal.",
     image:
-      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200",
+      "/public/images/Amazigh Mountain Valley at Sunset.png",
     gallery: [
       "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200",
       "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200",
