@@ -14,19 +14,19 @@ import Register from "./components/pages/Auth/register";
 // Guide Dashboard
 import GuideDashboard from "./components/Dashboards/guideDashboard/GuideDashboard";
 import GuideOverview from "./components/Dashboards/guideDashboard/components/GuideOverview";
-// import GuideBookings from "./components/Dashboards/guideDashboard/pages/GuideBookings";
-// import GuideProfile from "./components/Dashboards/guideDashboard/pages/GuideProfile";
-// import GuideReviews from "./components/Dashboards/guideDashboard/pages/GuideReviews";
-// import GuideAvailability from "./components/Dashboards/guideDashboard/pages/GuideAvailability";
+import GuideBookings from "./components/Dashboards/guideDashboard/pages/GuideBookings";
+import GuideProfile from "./components/Dashboards/guideDashboard/pages/GuideProfile";
+import GuideReviews from "./components/Dashboards/guideDashboard/pages/GuideReviews";
+import GuideAvailability from "./components/Dashboards/guideDashboard/pages/GuideAvailability";
 
 // Hotel Manager Dashboard
 import HotelManagerDashboard from "./components/Dashboards/hotelManagerDashboard/HotelManagerDashboard";
 import HotelManagerOverview from "./components/Dashboards/hotelManagerDashboard/components/HotelManagerOverview";
-// import HotelList from "./components/Dashboards/hotelManagerDashboard/pages/HotelList";
-// import HotelBookings from "./components/Dashboards/hotelManagerDashboard/pages/HotelBookings";
-// import HotelReviews from "./components/Dashboards/hotelManagerDashboard/pages/HotelReviews";
-// import HotelProfile from "./components/Dashboards/hotelManagerDashboard/pages/HotelProfile";
-// import HotelSettings from "./components/Dashboards/hotelManagerDashboard/pages/HotelSettings";
+import HotelList from "./components/Dashboards/hotelManagerDashboard/pages/HotelList";
+import HotelBookings from "./components/Dashboards/hotelManagerDashboard/pages/HotelBookings";
+import HotelReviews from "./components/Dashboards/hotelManagerDashboard/pages/HotelReviews";
+import HotelProfile from "./components/Dashboards/hotelManagerDashboard/pages/HotelProfile";
+import HotelSettings from "./components/Dashboards/hotelManagerDashboard/pages/HotelSettings";
 
 function App() {
   return (
@@ -48,22 +48,21 @@ function App() {
       {/* Guide Dashboard Layout */}
       <Route path="/guide/dashboard" element={<GuideDashboard />}>
         <Route index element={<GuideOverview />} />
-        {/* <Route path="bookings" element={<GuideBookings />} />
+        <Route path="bookings" element={<GuideBookings />} />
         <Route path="profile" element={<GuideProfile />} />
         <Route path="reviews" element={<GuideReviews />} />
-        <Route path="availability" element={<GuideAvailability />} /> */}
+        <Route path="availability" element={<GuideAvailability />} />
       </Route>
 
       {/* Hotel Manager Dashboard Layout */}
       <Route path="/hotel-manager/dashboard" element={<HotelManagerDashboard />}>
         <Route index element={<HotelManagerOverview />} />
-        {/* <Route path="hotels" element={<HotelList />} />
+        <Route path="hotels" element={<HotelList />} />
         <Route path="bookings" element={<HotelBookings />} />
         <Route path="reviews" element={<HotelReviews />} />
         <Route path="profile" element={<HotelProfile />} />
-        <Route path="settings" element={<HotelSettings />} /> */}
+        <Route path="settings" element={<HotelSettings />} />
       </Route>
-
     </Routes>
   );
 }
