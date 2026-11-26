@@ -1,16 +1,18 @@
 
 import { UserRound, MapPin, Languages, Award, Pencil } from "lucide-react";
-
-const profile = {
-  name: "Mohamed Amine",
-  title: "Mountain & Adventure Guide",
-  email: "amine@example.com",
-  phone: "+212 600 000 000",
-  bio: "Experienced local guide passionate about exploring the Azilal region, its mountains, culture and hidden gems.",
-  languages: ["Arabic", "French", "English"],
-  areas: ["Aït Bouguemez", "Cascades d'Ouzoud", "Zaouiat Ahansal"],
-  certificates: ["Mountain Guide Certificate", "First Aid Certificate"],
-};
+import GuideCertificates from "../components/Forms/GuideCertificates";
+import GuideLanguages from "../components/Forms/GuideAreas";
+import GuideAreas from "../components/Forms/GuideLanguages";
+// const profile = {
+//   name: "Mohamed Amine",
+//   title: "Mountain & Adventure Guide",
+//   email: "amine@example.com",
+//   phone: "+212 600 000 000",
+//   bio: "Experienced local guide passionate about exploring the Azilal region, its mountains, culture and hidden gems.",
+//   languages: ["Arabic", "French", "English"],
+//   areas: ["Aït Bouguemez", "Cascades d'Ouzoud", "Zaouiat Ahansal"],
+//   certificates: ["Mountain Guide Certificate", "First Aid Certificate"],
+// };
 
 export default function GuideProfile() {
   return (
@@ -30,8 +32,8 @@ export default function GuideProfile() {
             </div>
 
             <div>
-              <h2 className="text-base font-semibold text-slate-900">{profile.name}</h2>
-              <p className="text-sm text-slate-500">{profile.title}</p>
+              <h2 className="text-base font-semibold text-slate-900">profile name</h2>
+              <p className="text-sm text-slate-500">profile title</p>
               <span className="mt-2 inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
                 Active Guide
               </span>
@@ -52,17 +54,17 @@ export default function GuideProfile() {
           <div className="space-y-3 text-sm">
             <div>
               <p className="text-xs text-slate-400">Email</p>
-              <p className="text-slate-700">{profile.email}</p>
+              <p className="text-slate-700">profile email</p>
             </div>
 
             <div>
               <p className="text-xs text-slate-400">Phone</p>
-              <p className="text-slate-700">{profile.phone}</p>
+              <p className="text-slate-700">profile phone</p>
             </div>
 
             <div>
               <p className="text-xs text-slate-400">About</p>
-              <p className="leading-6 text-slate-600">{profile.bio}</p>
+              <p className="leading-6 text-slate-600">profile aboute</p>
             </div>
           </div>
         </div>
@@ -74,11 +76,11 @@ export default function GuideProfile() {
           </h3>
 
           <div className="flex flex-wrap gap-2">
-            {profile.languages.map((language) => (
+            {/* {profile.languages.map((language) => (
               <span key={language} className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs text-slate-700">
                 {language}
               </span>
-            ))}
+            ))} */}
           </div>
 
           <h3 className="mb-3 mt-6 flex items-center gap-2 text-sm font-semibold text-slate-900">
@@ -87,11 +89,11 @@ export default function GuideProfile() {
           </h3>
 
           <div className="flex flex-wrap gap-2">
-            {profile.areas.map((area) => (
+            {/* {profile.areas.map((area) => (
               <span key={area} className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs text-slate-600">
                 {area}
               </span>
-            ))}
+            ))} */}
           </div>
         </div>
 
@@ -102,16 +104,21 @@ export default function GuideProfile() {
           </h3>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            {profile.certificates.map((certificate) => (
+            {/* {profile.certificates.map((certificate) => (
               <div key={certificate} className="flex items-center gap-3 rounded-lg border border-slate-200 p-3">
                 <div className="rounded-lg bg-emerald-50 p-2 text-emerald-700">
                   <Award size={17} />
                 </div>
                 <p className="text-sm text-slate-700">{certificate}</p>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
+      </div>
+      <div className="grid gap-6 xl:grid-cols-2">
+        <GuideLanguages />
+        <GuideAreas />
+        <GuideCertificates />
       </div>
     </div>
   );

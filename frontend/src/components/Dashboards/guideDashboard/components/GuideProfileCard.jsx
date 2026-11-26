@@ -1,5 +1,4 @@
 import { UserRound, MapPin, Languages, ArrowUpRight } from "lucide-react";
-
 export default function GuideProfileCard() {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
